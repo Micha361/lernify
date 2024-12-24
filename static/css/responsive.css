@@ -1,0 +1,81 @@
+.container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-links ul {
+    margin-top: 10px;
+}
+
+.toggle-nav {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-nav.active {
+    transform: rotate(90deg);
+}
+
+.toggle-nav:hover{
+    background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.4s ease-in-out;
+    }
+
+    .navbar-links.active {
+        height: 300px;
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .navbar-links ul li {
+        margin: 0;
+    }
+
+    .toggle-nav {
+        display: block;
+    }
+
+    .app{
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .comparison-table {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px; 
+        width: 325px;
+    }
+    
+}
+
+

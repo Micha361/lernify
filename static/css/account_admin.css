@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.active{
+    color: #ffffff;   
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
+
+a{
+    font-weight: bold;
+}
+
+li a{
+    color: black;
+}
+
+span{
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+}
+
+span:hover{
+    color: rgb(134, 134, 134);
+    transition: 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-nav{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;           
+        justify-content: center; 
+        align-items: center;   
+}
+
+header {
+    background: #000000;
+    color: white;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; 
+    padding: 0; 
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e0e0e0;
+}
+
+.account-container {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 50px auto 0;
+    margin-bottom: 100px;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-section h2 {
+    margin: 0;
+    color: #333;
+}
+
+.info-section,
+.settings-section,
+.activity-section {
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #444;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    color: #555;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+#delete-account-button{
+    margin-top: 10px;
+    background-color: rgb(255, 31, 31);
+    color: white;
+    height: 25px;
+    width: 130px;
+    border-radius: 7px;
+    border: white;
+    font-weight: bold;
+}
+
+#delete-account-button:hover{
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #000000;
+    color: white;
+
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Passwort ändern Teil */
+
+input{
+    text-align: center;
+}
+
+.change-password{
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    height: 25px;
+    width: 130px;
+    border-radius: 7px;
+    border: white;
+    font-weight: bold;
+}
+
+.change-password:hover{
+    cursor: pointer;
+}
+

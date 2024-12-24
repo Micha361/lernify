@@ -1,0 +1,16 @@
+Flask
+flask_sqlalchemy
+flask_login
+flask_wtf
+flask_mail
+wtforms
+flask_bcrypt
+flask_cors
+openai
+requests
+Pillow
+pytesseract
+PyPDF2
+firebase-admin
+email-validator
+python-dotenv

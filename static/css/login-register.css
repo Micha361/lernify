@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 100px;
+    width: 90%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: Black;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background: #555;
+    transition: 0.3s ease;
+}
+
+a {
+    margin-top: 10px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.flash-messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.flash-messages li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.flash-messages .danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container-r {
+    height: auto;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.qr-codes {
+    margin-top: 20px;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.qr-code-container {
+    margin: 0;
+}
+
+.info-box {
+    text-align: left;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #383838;
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+}
+
+.info-box h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.remember-container{
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.remember{
+    margin-left: 10px;
+}
+
+.remember:hover{
+    cursor: pointer;
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.twint-title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+span{
+    font-weight: bold;
+}
+
+.contact{
+    text-decoration: none;
+}
+
+.strich{
+    text-decoration: line-through;
+}
+
+#terms{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.container-c {
+    display: inline-flex;
+    align-items: center;
+}
+
+.check {
+    cursor: pointer;
+    position: relative;
+    margin-right: 8px; 
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+    margin-left: 10px;
+}
+
+.check:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34, 50, 84, 0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.check svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+}
+
+.check svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+}
+
+.check svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+}
+
+#cbx:checked + .check svg {
+    stroke: #000000;
+}
+
+#cbx:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+}
+
+#cbx:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+}
+
+.checkbox-text {
+    font-size: bold;
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}

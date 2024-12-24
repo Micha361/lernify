@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon" sizes="64x64">
+    <title>Humanizer</title>
+    <link rel="stylesheet" href="../static/css/humanizer.css">
+    <link rel="stylesheet" href="../static/css/darkmode.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1646803350979604"
+     crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9709RXE4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R9709RXE4G');
+</script>
+<body>
+
+    <header>
+        <div class="container-nav">
+            <a style="color: white; text-decoration: none;" href="{{url_for('lernify')}}"><h1>Lernify</h1></a>
+            <button class="toggle-nav" onclick="toggleNavbar()">☰</button>
+            <nav class="navbar-links">
+                <ul>
+                    <li><a href="{{url_for('lernify')}}"><span>Home</span></a></li>
+                    <li><a href="{{url_for('humanizer')}}"><span class="active">Humanizer</span></a></li>
+                    <li><a href="{{url_for('faq_input')}}"><span>Quiz</span></a></li>
+                    <li><a href="{{url_for('ordner')}}"><span>Ordner</span></a></li>
+                   <li><a href="{{url_for('account')}}"><span>Account</span></a></li>
+                    <li><a href="{{url_for('logout')}}"><span>Abmelden</span></a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="humanizer-content">
+            <div class="humanizer-container">
+                <h2>Humanizer</h2>
+                <p class="info-text">
+                    Füge hier deinen Text von Beispielsweise ChatGPT ein und lasse ihn so darstellen als wäre er von dir geschrieben. (Zu lange Texte könnten verkürzt werden.)
+                </p>
+                <button id="copyButton" onclick="copyToClipboard()">Kopieren</button>
+                <div id="humanizerOutput" class="scrollable-text">Noch kein Text eingefügt...</div>
+            </div>            
+        </section>
+    </main>
+
+    <div class="input-container">
+        <textarea 
+            id="notesInput"
+            name="notes" 
+            placeholder="Text einfügen..."></textarea>
+        <button id="createButton" class="createButton" onclick="createHumanizedText()">Erstellen</button>
+    </div>
+    
+
+
+    <script src="../static/js/humanizer.js"></script>
+    <script src="../static/js/darkmode.js"></script>
+    <script src="../static/js/responsive.js"></script>
+</body>
+</html>

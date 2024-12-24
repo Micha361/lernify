@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernify-admin</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon" sizes="64x64">
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="../static/css/darkmode.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1646803350979604"
+     crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9709RXE4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R9709RXE4G');
+</script>
+<body>
+<main class="main-c">
+    <header>
+        <div class="container-nav">
+            <h1>Lernify</h1>
+            <nav class="navbar-links">
+                <ul>
+                    <li><a href="{{url_for('admin')}}"><span>Dashboard</span></a></li> 
+                    <li><a href="{{url_for('account_admin')}}"><span>Account</span></a></li>
+                    <li><a href="{{url_for('logout')}}"><span>Abmelden</span></a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>   
+    
+    <main>
+        <section id="app" class="hero">
+            <div class="container hero-content">
+                <div class="chart-container">
+                    <canvas id="userRegistrationChart"></canvas>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <section id="register-user" class="hero">
+        <div class="container hero-content">
+            <h2>Benutzer registrieren</h2>
+            <form method="POST" action="{{ url_for('register_user') }}" class="admin-register-form">
+                {{ form.hidden_tag() }}
+    
+                <label for="username">Benutzername</label>
+                {{ form.username(class="input-field", placeholder="Benutzernamen eingeben") }}
+    
+                <label for="email">Email</label>
+                {{ form.email(class="input-field", placeholder="Email eingeben") }}
+    
+                <label for="password">Passwort</label>
+                <input type="password" name="password" class="input-field" placeholder="Passwort eingeben">
+    
+                <label for="user_type">Benutzertyp</label>
+                <select name="user_type" class="input-field" required>
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                </select>
+    
+                <div class="button-container">
+                    <button type="submit" class="create-button">Benutzer erstellen</button>
+                </div>
+            </form>
+            <div class="flash-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="flash-messages">
+                        {% for category, message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </section>
+    
+
+    <main>
+        <section id="app" class="hero">
+            <div class="container hero-content">
+                <h2>User</h2>
+                <p>Gesamtanzahl der Nutzer: {{ totalUsers }}</p>
+
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Benutzernamen suchen..." onkeyup="filterUsers()">
+                </div>
+        
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Benutzername</th>
+                            <th>Email</th>
+                            <th>Beitrittsdatum</th>
+                            <th>Benutzertyp</th>
+                            <th>Löschen</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td class="username">{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.created_at }}</td>
+                            <td>{{ user.user_type }}</td>
+                            <td>
+                                <div class="button-container">
+                                    <form method="POST" action="/api/delete-user/{{ user['id'] }}">
+                                        <button type="submit">Löschen</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>                
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch('/api/user-registration-stats')
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.map(entry => entry.date);
+                    const counts = data.map(entry => entry.count);
+    
+                    const ctx = document.getElementById('userRegistrationChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Anzahl der Registrierungen',
+                                data: counts,
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderWidth: 2,
+                                fill: true
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Datum'
+                                    }
+                                },
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Anzahl der Benutzer'
+                                    },
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => console.error('Fehler beim Abrufen der Daten:', error));
+        });
+    </script>
+    
+    <script src="../static/js/admin.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="../static/js/responsive.js"></script>
+    </main>
+</body>
+</html>

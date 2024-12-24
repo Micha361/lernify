@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+span {
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+    font-weight: bolder;
+}
+
+span:hover {
+    color: rgb(134, 134, 134);
+    transition: 0.3s ease;
+}
+
+.active{
+    color: #ffffff;   
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
+
+h2 {
+    text-align: center;
+}
+
+.humanizer-container {
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+}
+
+.input-container{
+    margin-bottom: 10px;
+}
+
+#instructionsInput {
+    padding: 15px;
+    border: 1px solid #696969;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.createButton {
+    flex: 0 0 120px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background: #000000;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.createButton:hover {
+    background: #484848;
+}
+
+.container-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;           
+    justify-content: space-between; 
+    align-items: center;      
+}
+
+header {
+    background: #000000;
+    color: white;
+    padding: 1rem 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; 
+    padding: 0; 
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e0e0e0;
+}
+
+#generate{
+    margin: 0 0;
+}
+
+#copyButton {
+    transform: translateY(-50%); 
+    padding: 5px 10px;
+    background-color: #757575;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+#copyButton:hover {
+    background-color: #888888;
+}
+
+#copyButton::before {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#copyButton.copied::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+#copyButton.copied {
+    color: transparent; 
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    resize: none;             
+    overflow: hidden;       
+    height: 100px;           
+    width: 100%;             
+    max-width: 1000px;        
+    padding: 15px;
+    border: 1px solid #696969;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+    height: 50px;
+}
+
+textarea:focus {
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+.info-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 700px;
+}
+
+
+.scrollable-text {
+    max-height: 300px; 
+    overflow-y: auto; 
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%; 
+    text-align: left;
+    word-wrap: break-word; 
+    box-sizing: border-box; 
+    margin-bottom: 10px; 
+}
+
+
+.scrollable-text::-webkit-scrollbar {
+    width: 13px;
+}
+
+.scrollable-text::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 20px;
+    border: 2px solid #f9f9f9;
+}
+
+.scrollable-text::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.scrollable-text::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 20px;
+}
+
+.scrollable-text::-webkit-scrollbar-thumb {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.scrollable-text::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}

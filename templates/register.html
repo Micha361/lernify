@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernify - Registrierung</title>
+    <link rel="stylesheet" href="../static/css/login-register.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1646803350979604"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Registrierung</h1>
+        <form method="POST" action="{{ url_for('register') }}">
+            {{ form.hidden_tag() }}
+            
+            <label for="username">Benutzername</label>
+            {{ form.username(class="input-field", placeholder="Benutzernamen eingeben") }}
+            
+            <label for="email">E-Mail-Adresse</label>
+            {{ form.email(class="input-field", placeholder="E-Mail-Adresse eingeben") }}
+            
+            <label for="password">Passwort</label>
+            <input type="password" name="password" class="input-field" placeholder="Passwort eingeben" required>
+            
+            <label for="confirm_password">Passwort bestätigen</label>
+            <input type="password" name="confirm_password" class="input-field" placeholder="Passwort erneut eingeben" required>
+            
+            <div class="container-c">
+                <span class="checkbox-text"><a href="{{ url_for('AGB') }}">Ich akzeptiere die AGBs</a></span>
+                <input type="checkbox" id="cbx" style="display: none;" required>
+                <label for="cbx" class="check">
+                    <svg width="18px" height="18px" viewBox="0 0 18 18">
+                        <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                        <polyline points="1 9 7 14 15 4"></polyline>
+                    </svg>
+                </label>
+            </div>            
+            
+            <button type="submit" class="button">Registrieren</button>
+        </form>
+        <a href="{{ url_for('login') }}">Schon ein Konto? Hier anmelden</a>
+        
+        <ul class="flash-messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon" sizes="64x64">
+    <link rel="stylesheet" href="../../static/css/account_admin.css">
+    <link rel="stylesheet" href="../static/css/darkmode.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1646803350979604"
+     crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9709RXE4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R9709RXE4G');
+</script>
+<body>
+
+    <header>
+        <div class="container-nav">
+            <h1>Lernify</h1>
+            <nav class="navbar-links">
+                <ul>
+                    <li><a href="{{url_for('admin')}}"><span>Dashboard</span></a></li> 
+                    <li><a href="{{url_for('account_admin')}}"><span>Account</span></a></li>
+                    <li><a href="{{url_for('logout')}}"><span>Abmelden</span></a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>   
+
+<div class="account-container">
+    <div class="profile-section">
+        <h2>{{ user.username }}</h2>
+    </div>
+
+    <div class="info-section-account">
+        <h3>Persönliche Informationen</h3>
+        <p><strong>Name:</strong> {{ user.username }}</p>
+        <p><strong>E-mail:</strong> {{ user.email }}</p>
+        
+    </div>
+
+    <div class="settings-section">
+        <h3 style="margin-top: 20px;">Einstellungen</h3>
+        <p><a href="{{url_for('passwort_aendern')}}">Passwort ändern</a></p>
+       <!-- 
+ <p><a href="{{url_for('E_mail_aendern')}}">E-mail ändern</a></p>
+        <p><a href="{{url_for('zwei_faktor')}}">2-Faktor-Authentifizierung aktivieren</a></p>
+        -->
+        <button id="delete-account-button">Account löschen</button>
+    </div>
+
+</div>
+
+<script src="../static/js/darkmode.js"></script>
+<script src="../static/js/responsive.js"></script>
+<script src="../static/js/account.js"></script>
+</body>
+</html>

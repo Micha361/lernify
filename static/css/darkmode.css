@@ -1,0 +1,160 @@
+.toggle-switch {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+  }
+  
+.switch-label {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+}
+  
+.checkbox {
+    position: absolute;
+    display: none;
+}
+  
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+  
+.checkbox:checked ~ .slider {
+    background-color: var(--light);
+}
+  
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+    box-shadow: inset 12px -4px 0px 0px var(--light);
+    background-color: var(--dark);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+  
+.checkbox:checked ~ .slider::before {
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(50px);
+    background-color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+  
+body{
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: rgb(47, 47, 52);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode h2 {
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode p,
+body.dark-mode h3,
+body.dark-mode .title,
+body.dark-mode .ro {
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .toggle-nav{
+    color: white;
+    background-color: black;
+    border: none; 
+}
+
+body.dark-mode .toggle-nav:hover{
+    color: white;
+    background-color: black;
+    border: none; 
+}
+
+body.dark-mode button{
+    background-color: rgb(181, 181, 181);
+    border: 2px solid white; 
+    transition: box-shadow 0.3s, border 0.3s; 
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    transition: 0.3s ease;
+}
+
+
+
+body.dark-mode .task-button:hover,
+body.dark-mode .scrollButton:hover,
+body.dark-mode .PostButton:hover,
+body.dark-mode button:hover{
+    background-color: rgb(181, 181, 181);
+    border: white 5px;
+    border: 2px solid white; 
+    box-shadow: 0 0 10px 3px white; 
+    transition: box-shadow 0.3s, border 0.3s; 
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    transition: 0.3s ease;
+}
+
+body.dark-mode .filter,
+body.dark-mode .task-list,
+body.dark-mode .new-task,
+body.dark-mode .hero-content,
+body.dark-mode .comparison-column,
+body.dark-mode .info-section,
+body.dark-mode .container-o,
+body.dark-mode .account-container,
+body.dark-mode .summary-container,
+body.dark-mode .contact-form {
+    background-color: rgb(46, 47, 52);
+    border: 2px solid rgb(255, 255, 255); 
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    animation: border-glow 2s infinite linear; 
+}
+
+/*@keyframes border-glow {
+    0% {
+        border-color: rgb(0, 255, 255); 
+    }
+    25% {
+        border-color: rgb(0, 128, 255); 
+    }
+    50% {
+        border-color: rgb(255, 0, 255); 
+    }
+    75% {
+        border-color: rgb(255, 255, 0); 
+    }
+    100% {
+        border-color: rgb(0, 255, 255);
+    }
+}
+*/

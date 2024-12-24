@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon" sizes="64x64">
+    <title>Einleitung</title>
+    <link rel="stylesheet" href="../static/css/einleitung.css">
+    <link rel="stylesheet" href="../static/css/darkmode.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1646803350979604"
+     crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9709RXE4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R9709RXE4G');
+</script>
+<body>
+
+    <header>
+        <div class="container-nav">
+            <a style="color: white; text-decoration: none;" href="{{url_for('lernify')}}"><h1>Lernify</h1></a>
+            <button class="toggle-nav" onclick="toggleNavbar()">☰</button>
+            <nav class="navbar-links">
+                <ul>
+                    <li><a href="{{url_for('lernify')}}"><span>Home</span></a></li>
+                    <li><a href="{{url_for('humanizer')}}"><span>Humanizer</span></a></li>
+                    <li><a href="{{url_for('faq_input')}}"><span>Quiz</span></a></li>
+                    <li><a href="{{url_for('ordner')}}"><span>Ordner</span></a></li>
+                   <li><a href="{{url_for('account')}}"><span>Account</span></a></li>
+                    <li><a href="{{url_for('logout')}}"><span>Abmelden</span></a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="container box">
+                <h2>Willkommen bei Lernify</h2>
+                <p>Lernify ist eine Plattform, die Schüler unterstützt, 
+                    insbesondere jene mit Lernschwierigkeiten. 
+                    Unsere Tools ermöglichen es, Zusammenfassungen zu erstellen,
+                     interaktive Quizes zu starten und vieles mehr. Im Gegegensatz zu anderen
+                     KI Giganten wie ChatGPT spezialisieren wir uns spezifisch mit unseren Tools
+                     darauf Themen zu verstehen und mit verschiedenen Funktionen wie Q&A und
+                     Quizes die Themen zu wiederholen und sie somit ich Gedächnis einzuprägen
+                    Unten findest du ein Video, das alles im Detail erklärt. Viel Spaß beim Ausprobieren!</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container box">
+                <h2>Unsere Funktionen</h2>
+                <div class="video-container">
+                    <video controls>
+                        <source src="{{ url_for('static', filename='video/video.mp4') }}" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips">
+            <div class="container box">
+                <h2>Tipps & Tricks zum besseren Lernen</h2>
+                <ul class="tips-list">
+                    <li>Setze klare Lernziele, um fokussiert zu bleiben.</li>
+                    <li>Erstelle einen Lernplan, um organisiert zu sein.</li>
+                    <li>Erkläre den Stoff, um ihn besser zu verstehen.</li>
+                    <li>Finde deinen Lernstil: visuell, auditiv oder praktisch.</li>
+                    <li>Teile Lernify-Ordner mit Freunden, um Notizen zu sammeln.</li>
+                    <li>Erstellt Lerngruppen, um euch gegenseitig zu prüfen.</li>
+                    <li>Engagiere dich aktiv im Unterricht.</li>
+                    <li>Nutze Lernify ;).</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <section id="contact">
+                <h2 id="contactTitle">Kontakt</h2>
+                <p>Bei Fragen kontaktiere uns unter: <a href="mailto:lernify.ch@gmail.com">lernify.ch@gmail.com</a><br>
+                <a href="{{url_for('AGB')}}">Hier Findest du die AGBs</a>
+            </section>
+            <p>&copy; Lernhilfe mit AI.</p>
+        </div>
+    </footer>
+
+    <script src="../static/js/darkmode.js"></script>
+    <script src="../static/js/responsive.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+.vercel
+firebase_key.json
+add_user.py
+node_modules
+test.py
+.env
+Ads.Txt
+.vscode
+.pytest_cache
+test.html

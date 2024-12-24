@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernify</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon" sizes="64x64">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/darkmode.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1646803350979604"
+     crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9709RXE4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R9709RXE4G');
+</script>
+<body>
+<main class="main-c">
+    <header>
+        <div class="container-nav">
+            <a style="color: white; text-decoration: none;" href="{{url_for('lernify')}}"><h1>Lernify</h1></a>
+            <button class="toggle-nav" onclick="toggleNavbar()">☰</button>
+            <nav class="navbar-links">
+                <ul>
+                    <li><a href="{{url_for('lernify')}}"><span class="active">Home</span></a></li>
+                    <li><a href="{{url_for('humanizer')}}"><span>Humanizer</span></a></li>
+                    <li><a href="{{url_for('faq_input')}}"><span>Quiz</span></a></li>
+                    <li><a href="{{url_for('ordner')}}"><span>Ordner</span></a></li>
+                    <li><a href="{{url_for('account')}}"><span>Account</span></a></li>
+                    <li><a href="{{url_for('logout')}}"><span>Abmelden</span></a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+              
+
+    <div class="flash-messages">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    </div>
+    
+    <main>
+        <section id="app" class="hero">
+            <div class="container hero-content">
+                <h2>Lernify</h2>
+                <p>Gib ein Thema, deine Notizen oder PDFs ein und lasse es uns für dich zusamenfassen! <br>(Unser eingebauter Humanizer lässt den text natürlich aussehen)</p>
+                <form id="topicForm" action="{{'summary'}}" method="GET">
+                    <input style="border: 1px solid #e4e4e4;" type="text" id="topicInput" name="topic" placeholder="Thema/Text/notizen eingeben..." required>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <div id="drop-area">
+                    <p>Für PDF-Dateien gehe zur <a href="{{'ordner'}}" style="cursor: pointer; color: blue; text-decoration: underline;">Ordner</a> Seite)
+                    <input type="file" id="file-input" accept="image/*,application/pdf"></p>
+                </div>
+<br><br>               <p>ACHTUNG! Dies ist eine BETA also könnte es zu komplikationen kommen. <br>Bei Problemen melden sie sich unter <a href="mailto:lernify.ch@gmail.com">Lernify.ch@gmail.com</a></p>
+
+            </div>
+        </section>
+        
+
+        <section id="about" class="info-section">
+            <div class="container">
+                <h2 id="aboutTitle">Über uns</h2>
+                <li>Wir bieten eine innovative Plattform, die künstliche Intelligenz nutzt, um Lerninhalte zu erstellen und zu verarbeiten. 
+                   Unser Ziel ist es, den Lernprozess zu verbessern und zu vereinfachen, besonders für Lernende mit Herausforderungen.
+                   Besuche und probiere unsere Funktionen aus wie die <a href="{{url_for('faq_input')}}">Quiz</a> funktion oder den <a href="{{url_for('humanizer')}}">Humanizer</a>. Für mehr
+                   <a href="{{url_for('einleitung')}}">klicken Sie hier</a>.</li>
+            </div>
+        </section>
+
+        <section id="features" class="info-section">
+            <div class="container">
+                <h2 id="featuresTitle">Funktionen</h2>
+                <ul>
+                    <li>✅ Text- und Bildverarbeitung für umfassendes Lernen</li>
+                    <li>✅ Interaktive Q&A Funktion</li>
+                    <li>✅ Lesbare Zusammenfassungen von komplexen Themen</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="promts" class="info-section">
+            <div class="container">
+                <h2 id="promtsTitle">Promts</h2>
+                <ul>
+                    <li><a href="#"><span class="promt">Q&A</a> Mache ein Aktives Q&A zu deinem Text.</li>
+                    <li><a href="#"><span class="promt">Vor und Nachteile</span></a> Liste die Vor- und Nachteile des Themas auf.</li>
+                    <li><a href="#"><span class="promt">Beispiele</span></a> Erhalte relevante Beispiele zu deinem Thema.</li>
+                    <li><a href="#"><span class="promt">Ursprung:</span></a> Entdecke den Ursprung oder die historische Entwicklung des Themas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Es sind nur beispieltexte (text muss noch eingefügt werden) -->
+        <section id="comparison" class="info-section">
+            <div class="container">
+                <h2>Vergleich <span class="vergleich">Lernify</span> & <span class="vergleich">ChatGPT</span></h2>
+                <div class="comparison-table">
+                    <div class="comparison-column">
+                        <h3><span class="vergleich">Lernify</span></h3>
+                        <ul>
+                            <li>✅Eingebauter Humanizer</li>
+                            <li>✅NPO (<strong>N</strong>on <strong>P</strong>rofit <strong>O</strong>rganisation)</li>
+                            <li>✅Speichert <strong>nicht</strong> aktiv deine Daten</li>
+                            <li>✅Keine zusatz Infos erforderlich</li>
+                            <li>✅Fordert keine Unötigen daten</li>
+                            <li>✅Kein Zusatztext</li>
+                            <li>✅Dateien speicher</li>
+                            <li>✅Spezialisiertes lernen</li>
+                            <li>✅Integrierte Lernfunktionen</li>
+                            <li>✅Integrierte Quiz Möglichkeit</li>
+                            <li>✅Fortschrittsverfolgung</li>
+                            <li>✅Visuele Inhalte</li>
+                            <li>✅Keine dierekte Interaktion nötig</li>
+                            <li>✅Gamification-Elemente</li>
+                            <li>✅100% Transparenz</li>
+                            <li>✅Keine Server überlastung</li>
+                            <li>✅Nicht bei Lehrer bekannt</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-column">
+                        <h3><span class="vergleich">ChatGPT</span></h3>
+                        <ul>
+                            <li>❌Eingebauter Humanizer</li>
+                            <li>❌NPO (<strong>N</strong>on <strong>P</strong>rofit <strong>O</strong>rganisation)</li>
+                            <li>❌Speichert <strong>nicht</strong> aktiv deine Daten</li>
+                            <li>❌Keine zusatz Infos erforderlich</li>
+                            <li>❌Fordert keine Unötigen daten</li>
+                            <li>❌Kein Zusatztext</li>
+                            <li>❌Dateien speicher</li>
+                            <li>❌Spezialisiertes lernen</li>
+                            <li>❌Integrierte Lernfunktionen</li>
+                            <li>❌Integrierte Quiz Möglichkeit</li>
+                            <li>❌Fortschrittsverfolgung</li>
+                            <li>❌Visuelle Inhalte</li>
+                            <li>❌Keine dierekte Interaktion nötig</li>
+                            <li>❌Gamification-Elemente</li>
+                            <li>❌100% Transparenz</li>
+                            <li>❌Keine Server überlastung</li>
+                            <li>❌Nicht bei Lehrer bekannt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <div class="container">
+            <section id="contact">
+                <h2 id="contactTitle">Kontakt</h2>
+                <p>Bei Fragen kontaktiere uns unter: <a href="mailto:lernify.ch@gmail.com">lernify.ch@gmail.com</a><br>
+                <a href="{{url_for('AGB')}}">Hier Findest du die AGBs</a>
+            </section>
+            <p>&copy; Lernhilfe mit AI.</p>
+        </div>
+    </footer>
+
+    <script src="../static/js/darkmode.js"></script>
+    <script src="../static/js/responsive.js"></script>
+    </main>
+</body>
+</html>

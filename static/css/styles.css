@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.active{
+    text-decoration: underline;
+    color: #ffffff;   
+    transition: 0.3s ease;
+    font-weight: bolder;
+}
+
+a{
+    font-weight: bold;
+}
+
+li a{
+    color: black;
+    text-decoration: none;
+}
+
+span{
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+    font-weight: bolder;
+}
+
+span:hover{
+    color: rgb(134, 134, 134);
+    transition: 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container-nav{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;           
+        justify-content: space-between; 
+        align-items: center;   
+}
+
+header {
+    background: #000000;
+    color: white;
+    padding: 1rem 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; 
+    padding: 0; 
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e0e0e0;
+}
+
+.hero {
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-content {
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-content h2, p {
+    color: rgb(106, 106, 106);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero form {
+    margin-top: 20px;
+}
+
+.hero input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 30px;
+    border-radius: 12px;
+}
+
+
+
+#drop-area {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    color: #666;
+    border-radius: 10px;
+}
+
+#drop-area.hover {
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+
+#file-input {
+    display: none;
+}
+
+.hero button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #000000;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s ease;
+    border-radius: 15px;
+}
+
+.hero button:hover {
+    background: #555;
+}
+
+.info-section {
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section{
+    list-style-type: none;
+}
+
+.info-section a{
+    text-decoration: underline;
+}
+
+#contactTitle{
+    transition: 1s ease;
+}
+
+#contactTitle:hover{
+    text-decoration: underline;
+    transition: 1s ease;
+}
+
+#features ul {
+    list-style-type: none;
+    padding: 0; 
+    margin: 0;
+}
+
+#comparison .container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.comparison-table {
+    width: 650px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.comparison-column {
+    background: #ebebeb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.comparison-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.comparison-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comparison-column ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.comparison-column li{
+    text-align: left;
+}
+
+.vergleich{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.vergleich:hover{
+    color: black;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #000000;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.promt{
+    font-weight: bold;
+    color: black;
+}
+
+.flash-messages {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    list-style-type: none;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.flash-messages .danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    list-style-type: none;
+
+}
+
+.flash-messages .success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}

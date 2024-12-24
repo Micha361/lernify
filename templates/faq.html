@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon" sizes="64x64">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../static/css/faq.css">
+    <link rel="stylesheet" href="../static/css/darkmode.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1646803350979604"
+     crossorigin="anonymous"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R9709RXE4G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R9709RXE4G');
+</script>
+<body>
+    <header>
+        <div class="container-nav">
+            <a style="color: white; text-decoration: none;" href="{{url_for('lernify')}}"><h1>Lernify</h1></a>
+            <button class="toggle-nav" onclick="toggleNavbar()">☰</button>
+            <nav class="navbar-links">
+                <ul>
+                    <li><a href="{{url_for('lernify')}}"><span>Home</span></a></li>
+                    <li><a href="{{url_for('humanizer')}}"><span>Humanizer</span></a></li>
+                    <li><a href="{{url_for('faq_input')}}"><span class="active">Quiz</span></a></li>
+                    <li><a href="{{url_for('ordner')}}"><span>Ordner</span></a></li>
+                   <li><a href="{{url_for('account')}}"><span>Account</span></a></li>
+                    <li><a href="{{url_for('logout')}}"><span>Abmelden</span></a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="app">
+        <a href="javascript:history.back()">zurück</a>
+        <h1>Quiz</h1>
+        <div id="quizContainer">
+            <h2 id="question">Frage wird geladen...</h2>
+            <div id="answer-buttons">
+                <button class="btn">Antwort 1</button>
+                <button class="btn">Antwort 2</button>
+                <button class="btn">Antwort 3</button>
+                <button class="btn">Antwort 4</button>
+            </div>
+            <button id="nextQuestion" style="display: none;">Nächste Frage</button>
+        </div>
+    </div>
+<script src="../static/js/faq.js"></script>
+<script src="../static/js/responsive.js"></script>
+</body>
+</html>
