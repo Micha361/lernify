@@ -1,5 +1,7 @@
 **-Lernify**
 
+(entwickelt ohne Frameworks)
+
 **Projektbeschreibung:**
 Lernify ist eine moderne E-Learning-Plattform, die das Ziel verfolgt, Lernen durch innovative Technologien und benutzerfreundliche Features einfacher und effektiver zu gestalten. Die Plattform wurde entwickelt, um Lernende zu unterstützen und bietet eine Vielzahl von Funktionen, die speziell auf ihre Bedürfnisse zugeschnitten sind.
 
