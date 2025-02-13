@@ -33,5 +33,5 @@ Registrierung und Login: Wen sie bei der default seite Login ankommen können si
 
 
 
-Dieses Projekt ist online erreichbar unter www.lernify.ch
+Dieses Projekt ist online erreichbar unter www.lernify.ch (zurzeit nicht nutzbar)
 
